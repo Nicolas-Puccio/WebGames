@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rat game</title>
+    <style>
+        td {
+            width: 2%;
+            height: 1%;
+        }
+    </style>
+    <script>
+        let game;
+        const columnsAmount = 15;
+        const rowsAmount = 5;
+        const ratsAmount = 3;
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const table = document.getElementById("game");
+
+            game = new Array(rowsAmount)
+            for (let i = 0; i < rowsAmount; i++) {
+                game[i] = new Array(columnsAmount)
+
+                const tr = document.createElement("tr");
+
+                for (let j = 0; j < columnsAmount; j++) {
+                    const td = document.createElement("td");
+                    td.setAttribute('id', `${j}-${i}`);
+                    td.innerHTML = `${j}-${i}`
+                    tr.appendChild(td);
+                    game[i][j] = 0;
+                }
+                table.appendChild(tr);
+            }
+
+            Draw()
+        });
+
+        const Start = () => {
+            for (let i = 0; i < rowsAmount; i++) {
+                for (let j = 0; j < columnsAmount; j++) {
+                    game[i][j] = Math.random() > .5 ? 0 : 1;//0 = air, 1 = wall
+                }
+            }
+            Draw()
+        }
+
+
+
+        const Draw = () => {
+            console.log("DRAW")
+            for (let i = 0; i < rowsAmount; i++) {
+                for (let j = 0; j < columnsAmount; j++) {
+                    document.getElementById(`${j}-${i}`).innerHTML = game[i][j]
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="Start()">Start / Restart</button>
+
+    <br><br>
+
+    <table id="game"></table>
+</body>
+
+</html>
