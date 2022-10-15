@@ -83,17 +83,31 @@ const Draw = () => {
     console.log("DRAW")
     for (let i = 0; i < rowsAmount; i++) {
         for (let j = 0; j < columnsAmount; j++)
-            document.getElementById(`${j}-${i}`).className  = `image${game[i][j]}`;
+            document.getElementById(`${j}-${i}`).className = `image${game[i][j]}`;
     }
 }
 
 
 const Tick = () => {
-    //loop rats one by one to check one of these
+    let movementFlag = false;
+
     //check for gravity
+    for (let i = rowsAmount - 2; i >= 0; i--) {//makes more sense to begin from below right? purposely ignoring most bottom row
+        for (let j = 0; j < columnsAmount; j++) {
+            const element = document.getElementById(`${j}-${i}`);
+            if (element.className === 'image2' || element.className === 'image3') {//if this is a rat
+                if (document.getElementById(`${j}-${i + 1}`).className === "image0") {//if the rie nothing under the rat
+                    document.getElementById(`${j}-${i + 1}`).className = gridData;
+                    element.className = 'image0';
+                }
+            }
+        }
+    }
     //check for movement
 
     //loop the whole thing again to see if the movement of a previous rat allows a new rat to move?
 
     //what would be the best way to optimize this?
+
+    return movementFlag;
 }
