@@ -1,4 +1,29 @@
 td {
-    width: 25px;
+    width: 30px;
     height: 25px;
+}
+
+td img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image0 {
+    background-image: url('./images/air.png');
+    background-size: 100% 100%;
+}
+
+.image1 {
+    background-image: url('./images/cheese.png');
+    background-size: 100% 100%;
+}
+
+.image2 {
+    background-image: url('./images/rat2.png');
+    background-size: 100% 100%;
+}
+
+.image3 {
+    background-image: url('./images/rat3.png');
+    background-size: 100% 100%;
 }

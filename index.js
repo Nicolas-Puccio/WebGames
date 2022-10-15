@@ -29,7 +29,6 @@ const CreateTable = () => {
         for (let j = 0; j < columnsAmount; j++) {
             const td = document.createElement("td");
             td.setAttribute('id', `${j}-${i}`);
-            td.innerHTML = `${j}-${i}`
             tr.appendChild(td);
             game[i][j] = 0;
         }
@@ -79,14 +78,12 @@ const Start = () => {
  * Draws current game to table
  * 
  * Called every tick
- * 
- * Currently draws number, should draw image
  */
 const Draw = () => {
     console.log("DRAW")
     for (let i = 0; i < rowsAmount; i++) {
         for (let j = 0; j < columnsAmount; j++)
-            document.getElementById(`${j}-${i}`).innerHTML = game[i][j];
+            document.getElementById(`${j}-${i}`).className  = `image${game[i][j]}`;
     }
 }
 
