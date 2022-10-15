@@ -27,3 +27,18 @@ td img {
     background-image: url('./images/rat3.png');
     background-size: 100% 100%;
 }
+
+.inputup {
+    background-image: url('./images/inputup.png');
+    background-size: 100% 100%;
+}
+
+.inputdown {
+    background-image: url('./images/inputdown.png');
+    background-size: 100% 100%;
+}
+
+.noinput {
+    background-image: url('./images/noinput.png');
+    background-size: 100% 100%;
+}
