@@ -1,7 +1,7 @@
 const columnsAmount = 20;
 const rowsAmount = 12;
 const ratsAmount = 10;
-const tickInterval = 50;
+const tickInterval = 75;
 let ticking = false;//true stops user input
 
 /**
@@ -136,7 +136,10 @@ const MovementTick = () => {
             const element = document.getElementById(`${j}-${i}`);
             if (element.className === 'image2') {//if this is a rat
                 //go right
-                if (document.getElementById(`${j + 1}-${i}`).className === "image0") {
+                if (j + 1 === columnsAmount) {
+                    element.className = 'image0';
+                }
+                else if (document.getElementById(`${j + 1}-${i}`).className === "image0") {
                     document.getElementById(`${j + 1}-${i}`).className = element.className;
                     element.className = 'image0';
                     return true
@@ -144,7 +147,10 @@ const MovementTick = () => {
 
             } else if (element.className === 'image3') {//if this is a rat
                 //go left
-                if (document.getElementById(`${j - 1}-${i}`).className === "image0") {
+                if (j === 0) {
+                    element.className = 'image0';
+                }
+                else if (document.getElementById(`${j - 1}-${i}`).className === "image0") {
                     document.getElementById(`${j - 1}-${i}`).className = element.className;
                     element.className = 'image0';
                     return true
