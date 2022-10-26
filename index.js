@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         table.appendChild(tr);
     }
+
+        Start();
 });
 
 
@@ -81,6 +83,8 @@ const Start = () => {
         document.getElementById(`${j}-${rowsAmount + 1}`).className = 'noinput';
         document.getElementById(`${j}-${rowsAmount + 1}`).onclick = () => { return false; }
     }
+
+    Tick();
 }
 
 
