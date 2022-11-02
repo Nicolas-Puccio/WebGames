@@ -3,18 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rat game</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="./index.js"> </script>
+    <title>Socket.io Games</title>
 </head>
 
 <body>
-    <button onclick="Start()">Start / Restart</button>
-    <button onclick="Tick()">Test Tick</button>
+    <div>
+        <p>this will be a chat</p>
+    </div>
+    <p>here should be a list of games you can clic and begin playing</p>
 
-    <br><br>
-
-    <table id="game"></table>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
 </body>
 
 </html>

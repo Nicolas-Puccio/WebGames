@@ -1,0 +1,27 @@
+{
+  "name": "html-games",
+  "version": "1.0.0",
+  "description": "Backend with views for test project using Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicolas-Puccio/HTML-Games.git"
+  },
+  "author": "Nicolas Puccio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicolas-Puccio/HTML-Games/issues"
+  },
+  "homepage": "https://github.com/Nicolas-Puccio/HTML-Games#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
